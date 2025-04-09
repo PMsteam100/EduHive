@@ -5,7 +5,7 @@ import App from './App.jsx'
 
 import { HashRouter, Routes, Route } from 'react-router-dom';
 
-import Login from './AloginRegister/Login';
+import Login from './AloginRegister/Login.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode >
