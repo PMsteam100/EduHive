@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import Hero from './Components/Hero'
-// import './App.css'
+import Hero from './Components/Hero';
+import './App.css'
 import Header from './Components/Header';
 import ChoosWorks from './Components/ChoosWorks';
 import WorksCard from './Components/WorksCard';
@@ -12,12 +10,7 @@ import Administrator from './Components/Administrator';
 import BlogSection from './Components/BlogSection';
 import TestimonialsCarousel from './Components/TestimonialsCarousel';
 import Footer from './Components/Footer';
-import StudentDashboard from './Dashboard/StudentDashboad';
-import AdminDash from '../src/AdminDashboard/AdminDash';
-import AddNewDash from './AddNewStdt.jsx/AddNewDash';
-import Login from '../src/AloginRegister/Login';
 import Partner from './Components/Partner';
-import StudentTest from './Dashboard/StudentTest';
 import BackToTopButton from './Components/BackToTopButton';
 
 
@@ -82,12 +75,6 @@ function App() {
       ))}
     </div>
 
-    {/* The Dash-boards */}
-       {/* <StudentDashboard /> */}
-       {/* <AdminDash /> */}
-       {/* <StudentTest /> */}
-       {/* <AddNewDash /> */}
-       {/* <Login /> */}
   </>
 
 

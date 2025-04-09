@@ -3,15 +3,7 @@ import { LuSearch } from "react-icons/lu";
 import Student1 from '../assets/Student1.jpg'
 import { IoNotificationsOutline } from "react-icons/io5";
 import { RiSettingsLine } from "react-icons/ri";
-import academicgrad from '../assets/Academigrad.png'
-// import { IoCloseSharp } from "react-icons/io5";
-// import { LuSquareMenu } from "react-icons/lu";
-// import { gsap } from 'gsap';
-// import { RiHome2Fill, RiWifiFill } from "react-icons/ri";
-// import { FaRegFileAlt } from "react-icons/fa";
-// import { MdOutlineAnalytics } from "react-icons/md";
-// import { TbLogout } from "react-icons/tb";
-
+import academicgrad from '../assets/Academigrad.png';
 
 const formatDate = (date) => {
     const day = date.getDate();
@@ -44,23 +36,6 @@ const StudentDashHeader = () => {
         setCurrentDate(formatDate(new Date()));
     }, []);
 
-
-
-
-    // const [isOpen, setIsOpen] = useState(false);
-    // //   const [isHovered, setIsHovered] = useState(false);
-    // const dropdownRef = useRef(null);
-    // //   const modalRef = useRef(null);
-
-    // useEffect(() => {
-    //     if (isOpen) {
-    //         gsap.fromTo(dropdownRef.current, { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5 });
-    //     }
-    // }, [isOpen]);
-
-    // const toggleNavbar = () => {
-    //     setIsOpen(!isOpen);
-    // };
 
     return (
         <div>
