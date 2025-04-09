@@ -1,15 +1,3 @@
-// import React from 'react'
-
-// const AddNewHeader = () => {
-//   return (
-//     <div>
-
-//     </div>
-//   )
-// }
-
-// export default AddNewHeader
-
 import React, { useState, useEffect, useRef } from 'react';
 import { LuSearch } from "react-icons/lu";
 import { IoCloseSharp } from "react-icons/io5";
