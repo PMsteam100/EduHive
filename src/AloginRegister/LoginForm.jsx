@@ -1,6 +1,6 @@
 import { useState } from "react";
 import logo from "../assets/EduHivelogo.png";
-
+import { Link } from 'react-router-dom'
 
 export default function LoginForm() {
   const [userId, setUserId] = useState("");
@@ -21,7 +21,7 @@ export default function LoginForm() {
   return (
     <div>
  <div className=" text-white p-6 absolute  md:invisible visible">
-      <img className="w-24" src={logo} alt="EduHive Logo" />
+       <Link to="/"><img className="w-24" src={logo} alt="EduHive Logo" /></Link>
     </div>
 
         <div className="flex justify-center items-center min-h-screen bg-gray-100">

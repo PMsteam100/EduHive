@@ -48,7 +48,7 @@ const Header = () => {
                 {/* small screen */}
 
                 <div className="text-3xl text-blue-900 visible md:invisible z-20 md:absolute">
-                    <button onClick={toggleNavbar}>{isOpen ? <IoCloseSharp /> : <LuSquareMenu />}</button>
+                    <button onClick={toggleNavbar}>{isOpen ? <IoCloseSharp className='text-white' /> : <LuSquareMenu />}</button>
                 </div>
 
                 {isOpen && (
