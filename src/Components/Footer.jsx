@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 const Footer = () => {
   return (
     <footer className="bg-blue-800 text-white pt-20 pb-10 font-poppins">
-      <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-3 gap-8 pb-10">
+      <div className="container mx-auto px-6 md:px-12 md:mt-10 md:mb-20 grid md:grid-cols-3 gap-8 pb-10">
         <div>
            <Link to="/"><img className='w-20' src={logo} alt="" /></Link> 
           <p className="mt-2 text-sm">
