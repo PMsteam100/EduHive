@@ -31,7 +31,7 @@ const blogPosts = [
 const BlogCard = ({ image, category, date, title, description }) => {
   return (
     <div className="bg-blue-50 shadow-md rounded-lg overflow-hidden max-w-sm">
-      <img src={image} alt={title} className="w-full h-48 object-cover" />
+      <div className=" overflow-hidden"><img src={image} alt={title} className="w-full h-48 object-cover hover:scale-[1.2] transition delay-150 duration-300 ease-in-out" /></div>
       <div className="p-4">
         <div className="flex items-center text-sm text-gray-600 mb-2">
           <span className="bg-yellow-400 text-gray-800 px-2 py-1 rounded-md mr-2 text-xs font-semibold">{category}</span>
