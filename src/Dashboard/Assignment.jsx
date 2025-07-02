@@ -1,6 +1,6 @@
 import React from 'react'
 import { Card, CardContent } from "../Components/ui/card";
-import { FaCalculator, FaBook, FaFlask, FaAtom } from "react-icons/fa";
+import { FaCalculator} from "react-icons/fa";
 import { PiAtom } from "react-icons/pi";
 import { SiMoleculer } from "react-icons/si";
 import { PiFediverseLogoDuotone } from "react-icons/pi";

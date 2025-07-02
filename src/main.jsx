@@ -2,7 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.jsx';
-import { AuthProvider } from './components/AuthContext.jsx';
+import { AuthProvider } from '../src/Components/AuthContext.jsx';
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Login from './AloginRegister/Login';
