@@ -9,7 +9,7 @@ import { gsap } from 'gsap';
 import Student1 from '../assets/Student1.jpg';
 import academicgrad from '../assets/Academigrad.png';
 import logo from "../assets/EduHivelogoFooter.png";
-import useLogout from '../Components/Logout';
+import useLogout from '../../src/Components/Logout'; // Adjust the import path as necessary
 
 
 const formatDate = (date) => {

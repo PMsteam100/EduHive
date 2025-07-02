@@ -4,7 +4,7 @@ import { RiHome2Fill, RiWifiFill } from "react-icons/ri";
 import { FaRegFileAlt } from "react-icons/fa";
 import { MdOutlineAnalytics } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
-import useLogout from '../Components/Logout';
+import useLogout from '../../src/Components/Logout'; // Adjust the import path as necessary
 
 
 const SideBar = () => {

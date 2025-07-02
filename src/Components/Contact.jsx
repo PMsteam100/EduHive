@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef, useContext  } from 'react';
 import { IoCloseSharp } from "react-icons/io5";
 import { Link } from 'react-router-dom';
 import { gsap } from 'gsap';
-import { AuthContext } from '../components/AuthContext.jsx';
+import { AuthContext } from '../../src/Components/AuthContext.jsx';
 import { apiSendGuestMessage } from './authAPI.jsx'; // adjust path as needed
 
 const Contact_us = () => {

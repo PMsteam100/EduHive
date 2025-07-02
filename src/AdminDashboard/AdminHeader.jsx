@@ -8,7 +8,7 @@ import { TbLogout } from "react-icons/tb";
 import { gsap } from 'gsap';
 import logo from "../assets/EduHivelogoFooter.png";
 import logo2 from "../assets/EduHivelogo.png";
-import useLogout from '../Components/Logout';
+import useLogout from '../../src/Components/Logout'; // Adjust the import path as necessary
 
 
 const formatDate = (date) => {
