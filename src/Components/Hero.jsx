@@ -49,10 +49,10 @@ const Hero = () => {
         <p className='mt-4 text-sm md:text-base text-element'>EduHive is a student record management platform that simplifies data organization, enhances accessibility, and ensures secure storage for academic institutions and students.</p>
         <div className='mt-4 flex text-element'>
           <button className="md:px-3 px-3 py-1 bg-blue-800 font-Roboto md:text-base text-xs font-medium rounded-lg  text-white hover:bg-white border-2 border-blue-800 hover:text-blue-800">
-          <Link to="/Login">Login as a Student</Link>
+          <Link to="/login?role=student">Login as a Student</Link>
                       </button>
           <button className="md:px-3 px-3 py-1 ml-2 bg-blue-100  font-Roboto md:text-base text-xs font-medium rounded-lg  text-black hover:bg-blue-800 border-2 border-blue-200 hover:text-white">
-          <Link to="/Login">Login as Admin</Link>
+          <Link to="/login?role=admin">Login as Admin</Link>
                       </button>
         </div>
       </div>

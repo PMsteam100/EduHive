@@ -4,7 +4,6 @@ import StudentAttendance from '../AdminDashboard/StudentAttendance'
 import AdminSideBar from '../AdminDashboard/AdminSideBar'
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import AdminHeaderSmall from './AdminHeaderSmall';
 
 gsap.registerPlugin(useGSAP);
 
@@ -43,11 +42,9 @@ const AdminDash = () => {
 
       <div className="md:w-[85%] w-[100%]">
 
-          <AdminHeaderSmall />
+          {/* <AdminHeaderSmall /> */}
           
-          <div className='text-element'>
           <AdminHeader />
-          </div>
 
         <div className='text-element'>
           <StudentAttendance />

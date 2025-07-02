@@ -4,8 +4,13 @@ import { RiHome2Fill, RiWifiFill } from "react-icons/ri";
 import { FaRegFileAlt } from "react-icons/fa";
 import { MdOutlineAnalytics } from "react-icons/md";
 import { TbLogout } from "react-icons/tb";
+import useLogout from '../Components/Logout';
+
 
 const SideBar = () => {
+     const logout = useLogout();
+
+
   return (
     <aside className=" h-full z-20 flex flex-col bg-blue-800 text-white p-6 absolute md:relative invisible md:visible">
       <img className="w-24" src={logo} alt="EduHive Logo" />
@@ -31,7 +36,7 @@ const SideBar = () => {
         </ul>
       </nav>
 
-      <p className="mt-auto cursor-pointer hover:text-yellow-400"> <TbLogout className='inline-block' /> Log out</p>
+      <p onClick={logout} className="mt-auto cursor-pointer hover:text-yellow-400"> <TbLogout className='inline-block' /> Log out</p>
     </aside>
   );
 };

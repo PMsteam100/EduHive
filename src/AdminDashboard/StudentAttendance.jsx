@@ -36,7 +36,7 @@ const StudentAttendance = () => {
 
   return (
 
-    <div>
+    <div className="relative">
 
       {/* Big screen */}
 

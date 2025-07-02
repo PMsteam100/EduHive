@@ -1,16 +1,12 @@
 import React, { useRef } from 'react';
-import Grade from "./Grade";
-import Assignment from "./Assignment";
-import Calendar from "./Calender";
-import SideBar from "./SideBar";
-import StudentDashHeader from './StudentDashHeader';
+import RegisterSideBar from './RegisterSideBar'
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-
+import RegisterForm from './RegisterForm';
 
 gsap.registerPlugin(useGSAP);
 
-const StudentDashboard = () => {
+const Register = () => {
 
 const container = useRef();
 
@@ -35,34 +31,20 @@ const container = useRef();
       });
   }, { scope: container });
 
-
   return (
     <div ref={container} className=" flex flex-row bg-gray-100 min-h-screen font-poppins ">
-      {/* Left Side bar */}
-      <div className='side-element w-[15%]'>
-          <SideBar />
+    
+    <div className='side-element w-[15%]'>
+     {/* Left Side bar */}
+    <RegisterSideBar />
       </div>
 
-      {/* Right Main design */}
-      <div className="md:w-[85%] w-[100%] ">
-          
-          <div>
-          <StudentDashHeader />
-          </div>
-
-        <div className='text-element -z-0 relative'>
-          <Assignment />
-        </div>
-        <div className='text-element z-0'>
-          <Grade />
-        </div>
-       
-        <div>
-          <Calendar />
-        </div>
-      </div>
+    <div className="md:w-[85%] w-[100%] text-element">
+    <RegisterForm />
     </div>
-  );
-};
 
-export default StudentDashboard;
+    </div>
+  )
+}
+
+export default Register

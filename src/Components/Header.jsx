@@ -93,7 +93,7 @@ const Header = () => {
 
                 <div className='invisible md:visible absolute md:relative'>
                     <button className="px-6 py-1 bg-blue-800 font-Roboto text-base font-medium rounded-lg  text-white hover:text-blue-800 hover:bg-blue-800/5 border-2 border-blue-800 hover:text-amber-48">
-                        Sign up
+                        <Link to='/Register'>Sign up</Link>
                     </button>
                 </div>
             </nav>

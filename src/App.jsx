@@ -12,6 +12,7 @@ import TestimonialsCarousel from './Components/TestimonialsCarousel';
 import Footer from './Components/Footer';
 import Partner from './Components/Partner';
 import BackToTopButton from './Components/BackToTopButton';
+import StudentDashboard from './Dashboard/StudentDashboad';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -27,6 +28,7 @@ function App() {
     { component: <Partner />, id: 'actions' },
     { component: <TestimonialsCarousel />, id: 'get' },
     { component: <Footer />, id: 'footer' },
+    // { component: <StudentDashboard />, id: 'student-dashboard' },
   ];
 
 
