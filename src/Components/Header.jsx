@@ -66,7 +66,7 @@ const Header = () => {
                                 </li>
 
                     <button className="px-6 py-1 hover:bg-blue-800 font-Roboto text-base font-medium rounded-lg  hover:text-white text-blue-800 bg-white border-2 border-blue-800 ">
-                        Sign up
+                         <Link to='/Register'>Sign up</Link>
                     </button>
                         </ul>
                     </div>

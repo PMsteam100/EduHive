@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef,useContext } from 'react';
 import { LuSearch, LuSquareMenu } from "react-icons/lu";
 import { IoNotificationsOutline, IoCloseSharp } from "react-icons/io5";
 import { RiSettingsLine, RiHome2Fill, RiWifiFill } from "react-icons/ri";
@@ -10,6 +10,7 @@ import Student1 from '../assets/Student1.jpg';
 import academicgrad from '../assets/Academigrad.png';
 import logo from "../assets/EduHivelogoFooter.png";
 import useLogout from '../../src/Components/Logout'; // Adjust the import path as necessary
+import { AuthContext } from '../../src/Components/AuthContext.jsx';
 
 
 const formatDate = (date) => {
@@ -33,6 +34,7 @@ const StudentDashHeader = () => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
      const logout = useLogout();
+const { user } = useContext(AuthContext);
 
     useEffect(() => {
         setCurrentDate(formatDate(new Date()));
@@ -74,7 +76,7 @@ const StudentDashHeader = () => {
                     <div className="flex items-center gap-2">
                         <img className="h-10 w-10 object-cover rounded-full" src={Student1} alt="Student" />
                         <div className="hidden md:block">
-                            <h6 className="text-xs">Sonia Doe</h6>
+                            <h6 className="text-xs">{user?.name ?? 'Student'}</h6>
                             <span className="text-xs">300L</span>
                         </div>
                     </div>
@@ -107,7 +109,7 @@ const StudentDashHeader = () => {
                 <div className="bg-blue-800 text-white p-4 md:p-10 md:pt-1 md:pb-1 rounded-lg flex justify-between items-center">
                     <div>
                         <p className="text-xs text-gray-300">{currentDate}</p>
-                        <h1 className="text-2xl md:text-4xl font-semibold py-2">Welcome Sonia!</h1>
+                        <h1 className="text-2xl md:text-4xl font-semibold py-2">Welcome {user?.name?.split(' ')[0] ?? 'Student'}!</h1>
                         <p className="text-xs text-gray-300">Explore, learn, and discover something new.</p>
                     </div>
                     <img src={academicgrad} className="w-20 md:w-32 object-cover" alt="Academic" />

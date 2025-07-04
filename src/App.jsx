@@ -13,6 +13,7 @@ import Footer from './Components/Footer';
 import Partner from './Components/Partner';
 import BackToTopButton from './Components/BackToTopButton';
 import StudentDashboard from './Dashboard/StudentDashboad';
+import AdminDash from './AdminDashboard/AdminDash';
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -29,6 +30,7 @@ function App() {
     { component: <TestimonialsCarousel />, id: 'get' },
     { component: <Footer />, id: 'footer' },
     // { component: <StudentDashboard />, id: 'student-dashboard' },
+    // { component: <AdminDash />, id: 'student-dashboard' },
   ];
 
 
@@ -59,10 +61,10 @@ function App() {
 
     <>
     {/* Header stays on top with higher z-index */}
-    <div className='relative z-10'>
+    {/* <div className='relative z-10'>
       <Header />
       <BackToTopButton />
-    </div>
+    </div> */}
 
     {/* Wrap other components in a lower z-index container */}
     <div>

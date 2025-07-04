@@ -23,10 +23,24 @@ const StudentAttendance = () => {
 
   const [selectedStudent, setSelectedStudent] = useState(null);
   const [modalPosition, setModalPosition] = useState(null);
+  const [name, setName] = useState("");
+  const [id, setId] = useState("");
+  const [progress, setProgress] = useState("");
+  const [number, setNumber] = useState("");
+  const [faculty, setFaculty] = useState("");
+  const [department, setDepartment] = useState("");
+  const [cgpa, setCgpa] = useState("");
+  const [registration, setRegistration] = useState("");
+
 
   const handleStudentClick = (student, index) => {
     setSelectedStudent(student);
     setModalPosition(index);
+  };
+
+  const handleDeleteStudent = (index) => {
+    const updatedStudents = students.filter((_, i) => i !== index);
+    setStudents(updatedStudents);
   };
 
   const handleCloseModal = () => {
@@ -37,6 +51,40 @@ const StudentAttendance = () => {
   return (
 
     <div className="relative">
+
+      <div className="p-4 bg-gray-100 rounded-lg mb-6 max-w-3xl mx-auto">
+        <h3 className="text-lg font-semibold mb-4">Add New Student</h3>
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
+            const newStudent = {
+              number,
+              name,
+              id,
+              progress: parseInt(progress),
+              faculty,
+              department,
+              cgpa: parseFloat(cgpa),
+              registration,
+            };
+            setStudents([...students, newStudent]);
+            // Clear fields after submit
+            setName(""); setId(""); setProgress(""); setNumber(""); setFaculty(""); setDepartment(""); setCgpa(""); setRegistration("");
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 gap-4"
+        >
+          <input value={number} onChange={(e) => setNumber(e.target.value)} placeholder="Number" className="p-2 border rounded" required />
+          <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Name" className="p-2 border rounded" required />
+          <input value={id} onChange={(e) => setId(e.target.value)} placeholder="ID" className="p-2 border rounded" required />
+          <input value={progress} onChange={(e) => setProgress(e.target.value)} placeholder="Progress" className="p-2 border rounded" type="number" min="0" max="100" required />
+          <input value={faculty} onChange={(e) => setFaculty(e.target.value)} placeholder="Faculty" className="p-2 border rounded" />
+          <input value={department} onChange={(e) => setDepartment(e.target.value)} placeholder="Department" className="p-2 border rounded" />
+          <input value={cgpa} onChange={(e) => setCgpa(e.target.value)} placeholder="CGPA" className="p-2 border rounded" type="number" step="0.01" min="0" max="5" />
+          <input value={registration} onChange={(e) => setRegistration(e.target.value)} placeholder="Registration Status" className="p-2 border rounded" />
+          <button type="submit" className="md:col-span-2 bg-blue-800 text-white py-2 px-4 rounded hover:bg-blue-700">Add Student</button>
+        </form>
+      </div>
+
 
       {/* Big screen */}
 
@@ -51,7 +99,8 @@ const StudentAttendance = () => {
                   <th className="p-3 rounded-l-lg text-left">Number</th>
                   <th className="p-3 text-left">Name</th>
                   <th className="p-3 text-left">ID</th>
-                  <th className="p-3 rounded-r-lg text-left">Progress</th>
+                  <th className="p-3 text-left">Progress</th>
+                  <th className="p-3 rounded-r-lg  text-left">Action</th>
                 </tr>
               </thead>
               <tbody >
@@ -113,7 +162,20 @@ const StudentAttendance = () => {
                             </div>
                           </div>
                         </td>
+                        <td className="p-3">
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation(); // prevent triggering student modal
+                              handleDeleteStudent(index);
+                            }}
+                            className="text-red-600 hover:underline"
+                          >
+                            Delete
+                          </button>
+                        </td>
+
                       </tr>
+
                     )}
                   </React.Fragment>
                 ))}
@@ -215,6 +277,18 @@ const StudentAttendance = () => {
                     <option value="90">90%</option>
                     <option value="100">100%</option>
                   </select>
+                  <div className="flex justify-end mt-2">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation(); // prevent modal opening
+                        handleDeleteStudent(index);
+                      }}
+                      className="text-red-600 text-sm hover:underline"
+                    >
+                      Delete
+                    </button>
+                  </div>
+
                 </div>
               </div>
             ))}
