@@ -61,10 +61,10 @@ function App() {
 
     <>
     {/* Header stays on top with higher z-index */}
-    {/* <div className='relative z-10'>
+    <div className='relative z-10'>
       <Header />
       <BackToTopButton />
-    </div> */}
+    </div>
 
     {/* Wrap other components in a lower z-index container */}
     <div>
