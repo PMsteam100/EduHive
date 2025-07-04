@@ -186,115 +186,103 @@ const StudentAttendance = () => {
       </div>
 
 
-
-      {/* Small screen */}
-
-      <div className="block md:hidden">
-        <div className="p-4 max-w-md mx-auto">
-          <h2 className="text-lg font-semibold mb-4 ">Student Attendance</h2>
-          <div className="bg-blue-800 text-white p-3 rounded-lg flex justify-between font-semibold">
-            <span>Number</span>
-            <span>Name</span>
-            <span>ID</span>
-          </div>
-
-          {selectedStudent && (
-            <div
-              className="fixed inset-0 bg-white/5 bg-opacity-50 z-50"
-              onClick={handleCloseModal}
-            >
-              <div
-                className="bg-white p-6 rounded-lg shadow-lg w-full relative z-50 mt-30"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <button onClick={handleCloseModal} className="absolute top-2 right-4 text-lg font-bold">&times;</button>
-                <div className="md:flex gap-12">
-                  <div className="flex justify-center"><img src={AdminImage} alt="Admin-Student" className="w-50 h-50 rounded-lg object-cover" /></div>
-
-                  <div className="md:flex space-x-20">
-                    <div className="space-y-3">
-                      <h2 className="text-xl font-semibold">Name</h2>
-                      <p>{selectedStudent.name}</p>
-                      <h1 className="text-xl font-semibold">Matric Number</h1>
-                      <p>{selectedStudent.id}</p>
-                      <h1 className="text-xl font-semibold">Department</h1>
-                      <p>{selectedStudent.department}</p>
-                    </div>
-
-                    <div className="space-y-3">
-                      <h1 className="text-xl font-semibold">Faculty</h1>
-                      <p>{selectedStudent.faculty}</p>
-
-                      <h1 className="text-xl font-semibold">CGPA</h1>
-                      <p>{selectedStudent.cgpa}</p>
-
-                      <h1 className="text-xl font-semibold">School Registration Progress</h1>
-                      <p className="text-red-500">{selectedStudent.registration}</p>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
-            </div>
-          )}
-
-          <div className={selectedStudent ? "blur-sm" : ""}>
-            {students.map((student, index) => (
-              <div key={index} onClick={() => handleStudentClick(student)} className="bg-white p-4 shadow-md rounded-lg mb-3">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-gray-600">{student.number}</span>
-                  <div className="flex items-center gap-2">
-                    <FaUser className="text-yellow-500 text-xl" />
-                    <span className="font-semibold">{student.name}</span>
-                  </div>
-                  <span className="text-sm text-gray-500">{student.id}</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2.5 relative">
-                  <div
-                    className="bg-blue-800 h-2.5 rounded-full"
-                    style={{ width: `${student.progress}%` }}
-                  ></div>
-                </div>
-                <div className="flex justify-between items-center mt-1 text-sm">
-                  <span className="font-medium text-gray-700">{student.progress}%</span>
-                  <select
-                    className=" p-1 text-sm cursor-pointer focus:outline-none"
-                    value={student.progress}
-                    onChange={(e) => {
-                      const newProgress = parseInt(e.target.value, 10);
-                      setStudents((prev) => {
-                        const updated = [...prev];
-                        updated[index].progress = newProgress;
-                        return updated;
-                      });
-                    }}
-                  >
-                    <option value="0">0%</option>
-                    <option value="25">25%</option>
-                    <option value="50">50%</option>
-                    <option value="75">75%</option>
-                    <option value="90">90%</option>
-                    <option value="100">100%</option>
-                  </select>
-                  <div className="flex justify-end mt-2">
-                    <button
-                      onClick={(e) => {
-                        e.stopPropagation(); // prevent modal opening
-                        handleDeleteStudent(index);
-                      }}
-                      className="text-red-600 text-sm hover:underline"
-                    >
-                      Delete
-                    </button>
-                  </div>
-
-                </div>
-              </div>
-            ))}
-          </div>
+{students.map((student, index) => (
+  <div key={index} className="relative">
+    <div
+      onClick={() => setSelectedStudent(student)}
+      className="bg-white p-4 shadow-md rounded-lg mb-4 cursor-pointer"
+    >
+      {/* Basic Info Row */}
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-gray-600">{student.number}</span>
+        <div className="flex items-center gap-2">
+          <FaUser className="text-yellow-500 text-xl" />
+          <span className="font-semibold">{student.name}</span>
         </div>
+        <span className="text-sm text-gray-500">{student.id}</span>
       </div>
+
+      {/* Progress Bar & Selector */}
+      <div className="w-full bg-gray-200 rounded-full h-2.5 relative mb-1">
+        <div
+          className="bg-blue-800 h-2.5 rounded-full"
+          style={{ width: `${student.progress}%` }}
+        ></div>
+      </div>
+
+      <div className="flex justify-between items-center text-sm">
+        <span className="font-medium text-gray-700">{student.progress}%</span>
+        <select
+          className="p-1 text-sm cursor-pointer focus:outline-none"
+          value={student.progress}
+          onChange={(e) => {
+            const newProgress = parseInt(e.target.value, 10);
+            const updated = [...students];
+            updated[index].progress = newProgress;
+            setStudents(updated);
+          }}
+        >
+          <option value="0">0%</option>
+          <option value="25">25%</option>
+          <option value="50">50%</option>
+          <option value="75">75%</option>
+          <option value="90">90%</option>
+          <option value="100">100%</option>
+        </select>
+      </div>
+
+      {/* Delete Button */}
+      <div className="flex justify-end mt-2">
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            handleDeleteStudent(index);
+          }}
+          className="text-red-600 text-sm hover:underline"
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+
+    {/* Floating Contextual Modal */}
+    {selectedStudent?.id === student.id && (
+  <div className="absolute top-full left-0 w-full bg-white shadow-xl rounded-lg z-10 mt-2 border p-4">
+    <div className="flex justify-between items-center mb-3">
+      <h3 className="font-semibold text-base">Student Details</h3>
+      <button
+        onClick={handleCloseModal}
+        className="text-lg font-bold text-gray-600"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div className="flex flex-col items-center gap-4 md:flex-row">
+      <img
+        src={AdminImage}
+        alt="Student"
+        className="w-32 h-32 rounded-lg object-cover border"
+      />
+
+      <div className="space-y-2 text-sm w-full">
+        <p><strong>Name:</strong> {selectedStudent.name}</p>
+        <p><strong>Matric Number:</strong> {selectedStudent.id}</p>
+        <p><strong>Department:</strong> {selectedStudent.department}</p>
+        <p><strong>Faculty:</strong> {selectedStudent.faculty}</p>
+        <p><strong>CGPA:</strong> {selectedStudent.cgpa}</p>
+        <p>
+          <strong>Registration:</strong>{" "}
+          <span className="text-red-500">{selectedStudent.registration}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+)}
+
+  </div>
+))}
+
 
 
     </div>
