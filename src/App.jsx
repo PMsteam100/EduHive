@@ -21,16 +21,16 @@ function App() {
 
 
   const components = [
-    // { component: <Hero />, id: 'hero' },
-    // { component: <ChoosWorks />, id: 'sectors' },
-    // { component: <WorksCard />, id: 'chart' },
-    // { component: <Administrator />, id: 'choice' },
-    // { component: <BlogSection />, id: 'resources' },
-    // { component: <Partner />, id: 'actions' },
-    // { component: <TestimonialsCarousel />, id: 'get' },
-    // { component: <Footer />, id: 'footer' },
+    { component: <Hero />, id: 'hero' },
+    { component: <ChoosWorks />, id: 'sectors' },
+    { component: <WorksCard />, id: 'chart' },
+    { component: <Administrator />, id: 'choice' },
+    { component: <BlogSection />, id: 'resources' },
+    { component: <Partner />, id: 'actions' },
+    { component: <TestimonialsCarousel />, id: 'get' },
+    { component: <Footer />, id: 'footer' },
     // { component: <StudentDashboard />, id: 'student-dashboard' },
-    { component: <AdminDash />, id: 'student-dashboard' },
+    // { component: <AdminDash />, id: 'student-dashboard' },
   ];
 
 
@@ -61,10 +61,10 @@ function App() {
 
     <>
     {/* Header stays on top with higher z-index */}
-    {/* <div className='relative z-10'>
+    <div className='relative z-10'>
       <Header />
       <BackToTopButton />
-    </div> */}
+    </div>
 
     {/* Wrap other components in a lower z-index container */}
     <div>
@@ -81,28 +81,7 @@ function App() {
 
   </>
 
-
-
-
-
-
-
-
-    // <div>
-    //    <Header />
-    //   <Hero />
-    //   <ChoosWorks />
-    //   <WorksCard />
-    //   <Administrator />
-    //   <BlogSection />
-    //   <Partner />
-    //   <TestimonialsCarousel />
-    //   <Footer />
-    //   {/* <StudentDashboard /> */}
-    //   {/* <AdminDash /> */}
-    //   {/* <AddNewDash /> */}
-    //   {/* <Login /> */}
-    // </div>
+  
   );
 };
 
